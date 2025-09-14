@@ -1,0 +1,22 @@
+[
+  {
+    "id": "アルファワークス-https-example-com-spaces-alpha",
+    "source": "example.com",
+    "name": "アルファワークス",
+    "url": "https://example.com/spaces/alpha",
+    "category": "coworking",
+    "address": "愛知県名古屋市中区1-2-3",
+    "price_text": "¥500/時〜",
+    "description_raw": "駅近・会議室あり"
+  },
+  {
+    "id": "ブラボーコワーキング-https-example-com-spaces-bravo",
+    "source": "example.com",
+    "name": "ブラボーコワーキング",
+    "url": "https://example.com/spaces/bravo",
+    "category": "coworking",
+    "address": "東京都渋谷区3-2-1",
+    "price_text": "¥800/時〜",
+    "description_raw": "登記OK・ドロップイン"
+  }
+]

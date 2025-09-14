@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<article class="card">
+  <h1>{{ item.name }}</h1>
+  {% if item.summary %}<p>{{ item.summary }}</p>{% endif %}
+  {% if item.price_text %}<p class="price">{{ item.price_text }}</p>{% endif %}
+  {% if item.address %}<p class="muted">{{ item.address }}</p>{% endif %}
+
+  <p><a rel="nofollow sponsored" href="{{ item.affiliate_url or item.url }}">詳細を見る</a></p>
+
+  <hr>
+  <h3>施設情報</h3>
+  <ul>
+    <li>カテゴリ: {{ item.category }}</li>
+    {% if item.price_min %}<li>最低価格(推定): {{ item.price_min }} / {{ item.price_unit or "-" }}</li>{% endif %}
+    {% if item.features %}<li>特徴: {{ item.features | join(", ") }}</li>{% endif %}
+    <li>出典: {{ item.source }}</li>
+  </ul>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"LocalBusiness",
+    "name":"{{ item.name | e }}",
+    "url":"{{ item.affiliate_url or item.url }}",
+    "address":"{{ item.address or '' }}",
+    "priceRange":"{{ item.price_text or '' }}"
+  }
+  </script>
+</article>
+{% endblock %}

@@ -1,0 +1,48 @@
+name: crawl-build-deploy
+on:
+  schedule:
+    - cron: "7 2,10,18 * * *"   # JSTで11:07/19:07/03:07ごろ
+  workflow_dispatch:
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install deps
+        run: |
+          pip install -r requirements.txt
+          python -m playwright install chromium
+      - name: Crawl (coworking)
+        run: |
+          python scrapers/coworking.py
+      - name: Normalize / Summarize (stub)
+        run: |
+          python llm/summarize.py data/raw/coworking.json data/normalized/coworking.json
+      - name: Build site
+        run: |
+          python build/generate_pages.py
+          python build/build_sitemap.py
+          python build/make_rss.py || true
+      - name: Bluesky Post (optional)
+        env:
+          BSKY_ID: ${{ secrets.BSKY_ID }}
+          BSKY_PW: ${{ secrets.BSKY_PW }}
+          SITE_BASE: ${{ vars.SITE_BASE }}
+        run: |
+          python growth/post_bsky.py || true
+      - name: Commit & Push artifacts
+        run: |
+          git config user.name bot
+          git config user.email bot@example.com
+          git add -A
+          git commit -m "auto: build $(date -u +%F-%T)" || true
+          git push || true
+      - name: Upload site artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: site
+          path: site
