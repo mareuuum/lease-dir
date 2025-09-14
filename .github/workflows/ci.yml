@@ -1,4 +1,4 @@
-name: crawl-build-deploy
+      - name: crawl-build-deploy
 on:
   schedule:
     - cron: "7 2,10,18 * * *"   # JSTで11:07/19:07/03:07ごろ
@@ -27,6 +27,11 @@ jobs:
           python build/generate_pages.py
           python build/build_sitemap.py
           python build/make_rss.py || true
+      - name: Sync to docs for GitHub Pages
+        run: |
+          rm -rf docs
+          mkdir -p docs
+          cp -r site/* docs/
       - name: Bluesky Post (optional)
         env:
           BSKY_ID: ${{ secrets.BSKY_ID }}
