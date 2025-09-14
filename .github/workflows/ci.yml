@@ -1,14 +1,19 @@
       - name: crawl-build-deploy
-on:
-  schedule:
-    - cron: "7 2,10,18 * * *"   # JSTで11:07/19:07/03:07ごろ
-  workflow_dispatch:
 
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: "7 2,10,18 * * *"   # 任意（今入っている値があればそのまま）
+
+permissions:
+  contents: write    # ワークフロー内で git push するために必要
 jobs:
   run:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+  　　　with:
+    　　　fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
