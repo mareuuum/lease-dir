@@ -24,10 +24,9 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Install dependencies
+            - name: Install dependencies
         run: |
           pip install -r requirements.txt
-          python -m playwright install chromium
 
       - name: Crawl (coworking)
         run: |
