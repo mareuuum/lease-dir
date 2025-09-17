@@ -1,58 +1,58 @@
-      - name: crawl-build-deploy
+name: crawl-build-deploy
 
 on:
   workflow_dispatch: {}
   schedule:
-    - cron: "7 2,10,18 * * *"   # 任意（今入っている値があればそのまま）
+    - cron: "7 2,10,18 * * *"
+  push:
+    paths-ignore:
+      - 'docs/**'
 
 permissions:
-  contents: write    # ワークフロー内で git push するために必要
+  contents: write
+
 jobs:
-  run:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-  　　　with:
-    　　　fetch-depth: 0
-      - uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
-      - name: Install deps
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
         run: |
           pip install -r requirements.txt
           python -m playwright install chromium
+
       - name: Crawl (coworking)
         run: |
           python scrapers/coworking.py
+
       - name: Normalize / Summarize (stub)
         run: |
           python llm/summarize.py data/raw/coworking.json data/normalized/coworking.json
+
       - name: Build site
         run: |
           python build/generate_pages.py
           python build/build_sitemap.py
           python build/make_rss.py || true
+
       - name: Sync to docs for GitHub Pages
         run: |
           rm -rf docs
           mkdir -p docs
           cp -r site/* docs/
-      - name: Bluesky Post (optional)
-        env:
-          BSKY_ID: ${{ secrets.BSKY_ID }}
-          BSKY_PW: ${{ secrets.BSKY_PW }}
-          SITE_BASE: ${{ vars.SITE_BASE }}
-        run: |
-          python growth/post_bsky.py || true
+
       - name: Commit & Push artifacts
         run: |
-          git config user.name bot
-          git config user.email bot@example.com
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
-          git commit -m "auto: build $(date -u +%F-%T)" || true
-          git push || true
-      - name: Upload site artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: site
-          path: site
+          git commit -m "auto: build $(date -u +%F-%T)" || echo "no changes"
+          git push
