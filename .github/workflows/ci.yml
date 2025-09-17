@@ -39,6 +39,7 @@ jobs:
       - name: Build site
         run: |
           python build/generate_pages.py
+          cp -r public/. site/
           python build/build_sitemap.py
           python build/make_rss.py || true
 
