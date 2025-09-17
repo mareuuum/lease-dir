@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rss version='2.0'><channel>
+<title>新着ディレクトリ</title>
+<link>https://example.pages.dev</link>
+<description>自動生成フィード</description>
+<item><title>アルファワークス</title><link>https://example.pages.dev/coworking/アルファワークス-https-example-com-spaces-alpha.html</link><description>料金目安: ¥500/時〜 / 所在地: 愛知県名古屋市中区1-2-3 / 特徴: 駅近・会議室あり</description></item>
+<item><title>ブラボーコワーキング</title><link>https://example.pages.dev/coworking/ブラボーコワーキング-https-example-com-spaces-bravo.html</link><description>料金目安: ¥800/時〜 / 所在地: 東京都渋谷区3-2-1 / 特徴: 登記OK・ドロップイン</description></item>
+</channel></rss>
