@@ -24,7 +24,7 @@ jobs:
         with:
           python-version: '3.x'
 
-            - name: Install dependencies
+      - name: Install dependencies
         run: |
           pip install -r requirements.txt
 
@@ -46,7 +46,11 @@ jobs:
         run: |
           rm -rf docs
           mkdir -p docs
-          cp -r site/* docs/
+          if [ -d site ]; then
+            cp -r site/. docs/
+          else
+            echo "site/ not found; skipping copy"
+          fi
 
       - name: Commit & Push artifacts
         run: |
