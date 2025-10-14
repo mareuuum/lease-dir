@@ -454,5 +454,17 @@
     "description_raw": "",
     "lat": 35.6755586,
     "lon": 139.7650418
+  },
+  {
+    "id": "tkp-13232507370",
+    "source": "OpenStreetMap (Overpass)",
+    "name": "TKP",
+    "url": "",
+    "category": "coworking",
+    "address": "",
+    "price_text": "",
+    "description_raw": "",
+    "lat": 35.6591239,
+    "lon": 139.704431
   }
 ]
