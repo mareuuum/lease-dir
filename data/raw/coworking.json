@@ -466,5 +466,17 @@
     "description_raw": "",
     "lat": 35.6591239,
     "lon": 139.704431
+  },
+  {
+    "id": "h1t日本橋-13269464957",
+    "source": "OpenStreetMap (Overpass)",
+    "name": "H1T日本橋",
+    "url": "",
+    "category": "coworking",
+    "address": "",
+    "price_text": "",
+    "description_raw": "",
+    "lat": 35.6836626,
+    "lon": 139.7730417
   }
 ]
