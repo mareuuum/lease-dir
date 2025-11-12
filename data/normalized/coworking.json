@@ -518,5 +518,18 @@
     "lat": 35.6836626,
     "lon": 139.7730417,
     "summary": "料金目安: / 所在地: / 特徴:"
+  },
+  {
+    "id": "zxy-13299244311",
+    "source": "OpenStreetMap (Overpass)",
+    "name": "ZXY",
+    "url": "",
+    "category": "coworking",
+    "address": "",
+    "price_text": "",
+    "description_raw": "",
+    "lat": 35.6879758,
+    "lon": 139.8001638,
+    "summary": "料金目安: / 所在地: / 特徴:"
   }
 ]
