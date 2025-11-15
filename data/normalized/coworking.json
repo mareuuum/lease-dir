@@ -1,5 +1,18 @@
 [
   {
+    "id": "synqa-https-www-synqa-jp",
+    "source": "OpenStreetMap (Overpass)",
+    "name": "SYNQA",
+    "url": "https://www.synqa.jp/",
+    "category": "coworking",
+    "address": "",
+    "price_text": "",
+    "description_raw": "",
+    "lat": 35.6768627,
+    "lon": 139.7704979,
+    "summary": "料金目安: / 所在地: / 特徴:"
+  },
+  {
     "id": "shinjuku-travelers-coworking-3254711920",
     "source": "OpenStreetMap (Overpass)",
     "name": "SHINJUKU TRAVELERS COWORKING",
