@@ -544,5 +544,18 @@
     "lat": 35.6879758,
     "lon": 139.8001638,
     "summary": "料金目安: / 所在地: / 特徴:"
+  },
+  {
+    "id": "名称不明-13310375652",
+    "source": "OpenStreetMap (Overpass)",
+    "name": "名称不明",
+    "url": "",
+    "category": "coworking",
+    "address": "",
+    "price_text": "",
+    "description_raw": "",
+    "lat": 35.7727295,
+    "lon": 139.5181314,
+    "summary": "料金目安: / 所在地: / 特徴:"
   }
 ]
