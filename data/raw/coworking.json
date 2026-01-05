@@ -514,5 +514,17 @@
     "description_raw": "",
     "lat": 35.7727295,
     "lon": 139.5181314
+  },
+  {
+    "id": "t-square-13431598174",
+    "source": "OpenStreetMap (Overpass)",
+    "name": "T-Square",
+    "url": "",
+    "category": "coworking",
+    "address": "",
+    "price_text": "",
+    "description_raw": "",
+    "lat": 35.6532549,
+    "lon": 139.7556776
   }
 ]
