@@ -570,5 +570,31 @@
     "lat": 35.6532549,
     "lon": 139.7556776,
     "summary": "料金目安: / 所在地: / 特徴:"
+  },
+  {
+    "id": "station-desk-グランスタ丸の内-1466650634",
+    "source": "OpenStreetMap (Overpass)",
+    "name": "STATION DESK グランスタ丸の内",
+    "url": "",
+    "category": "coworking",
+    "address": "",
+    "price_text": "",
+    "description_raw": "",
+    "lat": 35.6808093,
+    "lon": 139.7648716,
+    "summary": "料金目安: / 所在地: / 特徴:"
+  },
+  {
+    "id": "station-desk-グランスタ丸の内-1466650636",
+    "source": "OpenStreetMap (Overpass)",
+    "name": "STATION DESK グランスタ丸の内",
+    "url": "",
+    "category": "coworking",
+    "address": "",
+    "price_text": "",
+    "description_raw": "",
+    "lat": 35.6807812,
+    "lon": 139.7645276,
+    "summary": "料金目安: / 所在地: / 特徴:"
   }
 ]
