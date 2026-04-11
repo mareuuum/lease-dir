@@ -528,6 +528,18 @@
     "lon": 139.7556776
   },
   {
+    "id": "スマートカフェ-https-www-smart-cafe-jp",
+    "source": "OpenStreetMap (Overpass)",
+    "name": "スマートカフェ",
+    "url": "https://www.smart-cafe.jp/",
+    "category": "coworking",
+    "address": "",
+    "price_text": "",
+    "description_raw": "",
+    "lat": 35.696675,
+    "lon": 139.774697
+  },
+  {
     "id": "station-desk-グランスタ丸の内-1466650634",
     "source": "OpenStreetMap (Overpass)",
     "name": "STATION DESK グランスタ丸の内",
