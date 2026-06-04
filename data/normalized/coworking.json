@@ -585,6 +585,19 @@
     "summary": "料金目安: / 所在地: / 特徴:"
   },
   {
+    "id": "hakadoru-13897923236",
+    "source": "OpenStreetMap (Overpass)",
+    "name": "Hakadoru",
+    "url": "",
+    "category": "coworking",
+    "address": "東京都",
+    "price_text": "",
+    "description_raw": "",
+    "lat": 35.6901649,
+    "lon": 139.70548,
+    "summary": "料金目安: / 所在地: 東京都 / 特徴:"
+  },
+  {
     "id": "station-desk-グランスタ丸の内-1466650634",
     "source": "OpenStreetMap (Overpass)",
     "name": "STATION DESK グランスタ丸の内",
